@@ -1,0 +1,196 @@
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px 360px 0px;
+
+}
+
+/* header */
+h1 {
+    font-size: 80px;
+    line-height: 95px; /* 行高別忘了 */
+}
+
+/* main */
+main {
+    margin-bottom: 80px;
+}
+section {
+    margin-top: 64px;
+}
+
+.title {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.zh{
+    font-size: 32px;
+    padding-right: 16px;
+}
+
+.en{
+    font-size: 24px;
+    color: #A00404;
+}
+
+.content p{
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 24px;
+}
+
+/* 大頭貼 */
+.profile-pic img{
+    max-width: 324px;
+}
+
+/* 學歷 */
+.education .content p{
+    margin-bottom: 16px;
+}
+
+/* 技能 */
+.skills {
+    list-style: none;
+    padding: 0px;
+    
+}
+
+/* 有背景顏色的區塊 */
+.bg {
+    background-color: #415165;
+    max-width: 1920px;
+    margin: 0px -360px; /* 突破容器的終極大絕招-"負"邊際 */
+    padding-top: 24px; /* 內容物需要內縮，就再容器加入padding，而不是是在內容加入margin */
+    padding-bottom: 40px;
+}
+
+.bg hr{
+    color: #FFFFFF;
+    max-width: 996px;
+}
+
+.list {
+    border-left: 2px solid #96A9C4; /* 在外層設置左側邊框 */
+    padding-left: 20px; /* 增加與左側線條的距離 */
+    margin-top: 40px;
+    /* HTCD秘笈-1 */
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none; /* 移除列表標記，作用於容器中 */
+}
+
+.list li {
+    color: white;
+    line-height: 1.8;
+    list-style: none;
+}
+
+.list ul {
+    padding: 0;
+    font-size: 24px;
+    margin-bottom: 8px;
+    line-height: 36px;
+}
+
+
+.title-bg {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.title-bg .zh{
+    color: white;
+}
+
+.title-bg .en{
+    color: white;
+    text-transform: uppercase; /* 英文字母轉成大寫 */
+}
+
+/* 工作經驗 */
+.work-exp .list img{
+    max-width: 100px;
+    display: block; /* 圖片顯示為塊級元素，獨佔一行 */
+}
+
+.work-exp .list{
+    margin: 24px;
+}
+
+.work-exp .list ul{
+    font-weight: bold;
+}
+
+.work-exp .list p{
+    font-size: 20px;
+    width: 642px;
+    line-height: 30px;
+    font-weight: lighter;
+}
+
+/* footer */
+/* 聯絡方式 */
+#contact-bg .list img{
+    margin-left: 24px;
+    max-width: 48px;
+}
+
+#contact-bg .list{
+    border-left: none;
+    text-align: center;
+}
+
+#contact-bg .list li{
+    margin-bottom: 16px;
+    line-height: 36px;
+}
