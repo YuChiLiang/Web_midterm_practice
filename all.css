@@ -42,10 +42,20 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 40px 360px 0px;
+    
+}
+
+.container {
+    /* HTCD秘笈-1 */
+    max-width: 1200px; /* 該頁面排除佔滿X軸元素之外，最大寬度的值就是寬度最大的元素 */
+    margin-left: auto; /* 剩下的margin就隨意auto，就能做出不寫死寬度又能有規定margin的效果 */
+    margin-right: auto;
 
 }
 
@@ -59,8 +69,10 @@ h1 {
 main {
     margin-bottom: 80px;
 }
+
 section {
     margin-top: 64px;
+    margin-right: auto;
 }
 
 .title {
@@ -86,7 +98,7 @@ section {
 }
 
 /* 大頭貼 */
-.profile-pic img{
+.profile-pic{
     max-width: 324px;
 }
 
@@ -105,10 +117,10 @@ section {
 /* 有背景顏色的區塊 */
 .bg {
     background-color: #415165;
-    max-width: 1920px;
-    margin: 0px -360px; /* 突破容器的終極大絕招-"負"邊際 */
+    max-width: 100%;
     padding-top: 24px; /* 內容物需要內縮，就再容器加入padding，而不是是在內容加入margin */
     padding-bottom: 40px;
+    margin: 0px;
 }
 
 .bg hr{
@@ -120,11 +132,11 @@ section {
     border-left: 2px solid #96A9C4; /* 在外層設置左側邊框 */
     padding-left: 20px; /* 增加與左側線條的距離 */
     margin-top: 40px;
+    list-style: none; /* 移除列表標記，作用於容器中 */
     /* HTCD秘笈-1 */
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    list-style: none; /* 移除列表標記，作用於容器中 */
 }
 
 .list li {
@@ -158,22 +170,23 @@ section {
 }
 
 /* 工作經驗 */
-.work-exp .list img{
-    max-width: 100px;
-    display: block; /* 圖片顯示為塊級元素，獨佔一行 */
-}
-
 .work-exp .list{
     margin: 24px;
+    overflow: hidden;
 }
 
 .work-exp .list ul{
     font-weight: bold;
 }
 
+.work-exp .list img{
+    max-width: 100px;
+    display: block; /* 圖片顯示為塊級元素，獨佔一行 */
+}
+
 .work-exp .list p{
     font-size: 20px;
-    width: 642px;
+    max-width: 642px;
     line-height: 30px;
     font-weight: lighter;
 }
@@ -193,4 +206,28 @@ section {
 #contact-bg .list li{
     margin-bottom: 16px;
     line-height: 36px;
+}
+
+/* 點擊動畫 */
+.click{
+    border-bottom: 1px solid black;
+}
+
+.show-content{
+    transition: all 1s;
+    margin-left: -700px;
+    visibility: hidden;
+    height: 0;
+}
+
+.show-content.active {
+    height: auto;
+    margin-left: 0px; /* 目標位置 */
+    visibility: visible;
+}
+
+@media (max-width: 400px) {
+    .title ,.title-bg{
+        display: block;
+    }
 }
